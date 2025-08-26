@@ -1,0 +1,22 @@
+http:
+  middlewares:
+    rl:
+      rateLimit:
+        average: 50
+        burst: 100
+    sec-headers:
+      headers:
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true
+        stsPreload: true
+        frameDeny: true
+        contentTypeNosniff: true
+        referrerPolicy: same-origin
+    ipallow:
+      ipWhiteList:
+        sourceRange:
+          - 127.0.0.1/32      # localhost (curl sa hosta)
+          - ::1/128           # ipv6 localhost
+          # - 172.18.0.1/32   # docker bridge gateway (lokalni pristupi sa hosta)
+          # - 192.168.65.1/32
+          - 89.216.200.137/32 # my ip
