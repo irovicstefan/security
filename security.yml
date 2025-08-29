@@ -4,6 +4,10 @@ http:
       rateLimit:
         average: 50
         burst: 100
+    rl-influxdb:
+      rateLimit:
+        average: 50
+        burst: 100
     sec-headers:
       headers:
         stsSeconds: 31536000
